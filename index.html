@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icon-192.png" />
   <link rel="icon" href="icon-192.png" />
-  <title>My Day</title>
+  <title>My Day — Private Diary</title>
   <style>
     :root{
       --bg:#f7f8ff; --card:#ffffff; --ink:#28304f; --muted:#737a98;
@@ -239,6 +239,16 @@
     @media(max-width:430px){.pictureActions{grid-template-columns:1fr}.myCharacters{grid-template-columns:repeat(4,1fr)}.picturePreview{width:190px;height:190px}}
     @media(max-width:430px){.characterTypeGrid{grid-template-columns:1fr 1fr 1fr}.characterType{min-height:100px;font-size:12px}.characterType .big{font-size:36px}.animalChoices{grid-template-columns:repeat(4,1fr)}}
 
+
+    /* Diary-focus edition: photos are treated like scrapbook keepsakes, not avatars. */
+    .polaroid{position:relative;width:205px;margin:12px auto 24px;padding:10px 10px 38px;background:#fff;border-radius:4px;box-shadow:0 12px 28px rgba(47,53,88,.16);transform:rotate(-2deg)}
+    .polaroid:before{content:"";position:absolute;width:66px;height:20px;background:rgba(244,190,205,.72);top:-9px;left:68px;transform:rotate(3deg);z-index:2}
+    .polaroidPhoto{width:185px;height:185px;overflow:hidden;background:linear-gradient(145deg,#f2edff,#eef7ff);display:flex;align-items:center;justify-content:center;font-size:96px}
+    .polaroidPhoto .photoAvatar{border-radius:0}
+    .polaroidCaption{position:absolute;left:0;right:0;bottom:9px;text-align:center;font-size:15px;font-weight:800;color:#39405d;font-family:ui-rounded,"Comic Sans MS",cursive}
+    .miniAvatar .photoAvatar,.avatarPreview .photoAvatar{border-radius:50%}
+    nav{justify-content:space-evenly}
+
 </style>
 </head>
 <body>
@@ -253,14 +263,13 @@
     <button class="btn primary" onclick="go('record')">🎙️ &nbsp; Tell my day</button>
     <button class="btn plain" onclick="go('draw')">🎨 &nbsp; Draw something</button>
     <button class="btn plain diaryHome" onclick="go('diary')"><span class="diaryBook" aria-hidden="true"><span>♡</span></span><span><b>My Diary</b><small style="display:block;color:var(--muted);font-weight:650;margin-top:3px">Look back at your memories</small></span></button>
-    <button class="btn plain" onclick="go('world')">🌎 &nbsp; My World</button>
   </div>
   <div id="onThisDay" class="card" style="display:none"></div>
   <div class="card center">
     <div id="homeAvatar" class="avatarPreview homeAvatarPreview">🙂</div>
-    <h2>Your space, your way</h2>
-    <p class="muted">Choose your name, character and favourite look.</p>
-    <button class="smallbtn" onclick="go('character')">✨ Customise My Day</button>
+    <h2>Your diary, your memories</h2>
+    <p class="muted">Add your picture and make My Day feel like yours.</p>
+    <button class="smallbtn" onclick="go('character')">📸 My picture</button>
   </div>
   <div class="card install" id="installCard"><h2>Add My Day to your phone</h2><p class="muted">Install it so it opens like a normal app.</p><button class="btn green" id="installBtn">📲 Install My Day</button></div>
 </section>
@@ -317,9 +326,9 @@
 <section id="character" class="screen">
   <button class="smallbtn" onclick="go('home')">← Back</button>
   <h1>My Picture</h1>
-  <p class="muted">Choose a photo of you, or pick a little My Day character. You can change it whenever you like.</p>
+  <p class="muted">Add a picture to make your diary feel like yours. You can change it whenever you like.</p>
   <div class="avatarStudio">
-    <div id="characterPreview" class="picturePreview"></div>
+    <div class="polaroid"><div id="characterPreview" class="polaroidPhoto"></div><div id="polaroidCaption" class="polaroidCaption">My Day ♡</div></div>
     <div class="card"><b>What should My Day call you?</b><p class="muted">Your name stays here while you change your picture.</p><input id="profileName" class="field" maxlength="24" placeholder="My name…" oninput="profile.name=this.value"></div>
     <div class="card">
       <b>Use a photo</b><p class="muted">Choose one you already have, or take a new one.</p>
@@ -330,28 +339,10 @@
       <button id="removeProfilePhoto" class="btn removePicture" style="display:none" onclick="removeProfilePhoto()">🗑️ Remove my photo</button>
     </div>
     <div class="pictureDivider">or</div>
-    <div class="card"><b>Choose a My Day character</b><p class="muted">No photo? No problem. Pick a friendly little character instead.</p><div id="myCharacterOpts" class="myCharacters"></div></div>
+    <div class="card"><b>Prefer not to use a photo?</b><p class="muted">Choose a simple My Day picture instead.</p><div id="myCharacterOpts" class="myCharacters"></div></div>
     <div class="card"><b>Choose your vibe</b><p class="muted">Change the whole look of My Day.</p><div id="themeOpts" class="vibeGrid"></div></div>
-    <button class="btn primary" onclick="saveProfile()">Save my picture ✨</button>
+    <button class="btn primary" onclick="saveProfile()">Save my picture ♡</button>
   </div>
-</section>
-
-<section id="world" class="screen">
-  <button class="smallbtn" onclick="go('home')">← Back</button>
-  <h1>My World</h1><p class="muted">Make a little scene for your character and the buddies you create.</p>
-  <div id="worldStage" class="worldStage scene-bedroom"><div id="worldEffects" class="worldEffects"></div><div id="worldMe" class="worldMe"></div><div id="worldBuddies"></div></div>
-  <div class="card"><b>Choose a scene</b><p class="muted">Where should everyone hang out?</p><div id="sceneOpts" class="worldChoices"></div><p class="muted">Add a little magic</p><div id="effectOpts" class="worldChoices"></div></div>
-  <div class="card"><div class="row" style="align-items:center"><div><b>My little characters</b><p class="muted" style="margin-bottom:0">Create up to five buddies, pets or imaginary creatures.</p></div><button class="smallbtn" onclick="addBuddy()">＋ New buddy</button></div><div id="buddyList" class="buddyList"></div></div>
-  <div id="buddyEditor" class="card" style="display:none">
-    <b>Design this buddy</b>
-    <p class="muted">Name</p><input id="buddyName" class="field" maxlength="16" placeholder="Buddy name…" oninput="editBuddy('name',this.value)">
-    <p class="muted">Character</p><div id="buddyTypeOpts" class="worldChoices"></div>
-    <p class="muted">Colour</p><div id="buddyColourOpts" class="palette"></div>
-    <p class="muted">Little extra</p><div id="buddyAccOpts" class="worldChoices"></div>
-    <p class="muted">Where do they stand?</p><div id="buddyPosOpts" class="worldChoices"></div>
-    <button class="btn danger" onclick="deleteBuddy()">Remove this buddy</button>
-  </div>
-  <button class="btn primary" onclick="saveWorld()">Save My World ✨</button>
 </section>
 
 <section id="parent" class="screen">
@@ -375,7 +366,6 @@
   <button onclick="go('record')"><b>🎙️</b>Record</button>
   <button onclick="go('diary')"><b>📔</b>Diary</button>
   <button onclick="go('character')"><b>✨</b>Me</button>
-  <button onclick="go('world')"><b>🌎</b>World</button>
   <button onclick="parentGate()"><b>🔒</b>Parent</button>
 </nav>
 <div id="toast" class="toast"></div>
@@ -391,9 +381,6 @@ const profile = JSON.parse(localStorage.getItem('myday_profile')||'{"name":"","s
 if(!profile.skin){profile.skin='#d99b6c';profile.hairStyle='curls';profile.hairColour='#5b3d2e';profile.shirt='#6f8cff';profile.accessory='none';} profile.face=profile.face||'round';profile.outfit=profile.outfit||'tee';profile.eyeColour=profile.eyeColour||'#4b352d';profile.hairAccessory=profile.hairAccessory||(profile.accessory==='star'?'star':'none');profile.clipColour=profile.clipColour||'#ef6f9f';profile.shirt2=profile.shirt2||'#f3a7c1';profile.expression=profile.expression||'smile';
 const settings = JSON.parse(localStorage.getItem('myday_settings')||'{"draw":true,"memory":true,"notes":true,"media":true,"pin":"1234"}');
 if(settings.media===undefined) settings.media=true;
-const world = JSON.parse(localStorage.getItem('myday_world')||'{"scene":"bedroom","effect":"none","buddies":[]}');
-world.effect=world.effect||'none';
-let selectedBuddyId=world.buddies[0]?.id||null;
 
 const themes={
   Rainbow:{accent:'#7559d9',accent2:'#3fbfa5',soft:'#eee8ff',bg:'#fff3f8',page2:'#eef7ff',emoji:'🌈',note:'Bright & happy'},
@@ -426,7 +413,7 @@ function refreshProfileUI(){
  $('topAvatar').innerHTML=avatarHTML('small');
  $('homeAvatar').innerHTML=avatarHTML('large');
  if(profile.name) $('hello').textContent=`How was your day, ${profile.name}?`;
- $('profileName').value=profile.name||'';
+ $('profileName').value=profile.name||''; const cap=$('polaroidCaption'); if(cap) cap.textContent=(profile.name?profile.name+' ♡':'My Day ♡');
  $('characterPreview').innerHTML=avatarHTML('large');
 }
 function go(id){
@@ -434,7 +421,6 @@ function go(id){
  $(id).classList.add('active');
  if(id==='diary') renderEntries();
  if(id==='character') renderCharacter();
- if(id==='world') renderWorld();
  if(id==='parent') loadParentSettings();
  window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -621,7 +607,7 @@ const myDayCharacters=[
 function renderCharacter(){
  const typed=$('profileName')?.value;if(typed!==undefined)profile.name=typed;
  $('characterPreview').innerHTML=avatarHTML('large');
- $('profileName').value=profile.name||'';
+ $('profileName').value=profile.name||''; const cap=$('polaroidCaption'); if(cap) cap.textContent=(profile.name?profile.name+' ♡':'My Day ♡');
  $('removeProfilePhoto').style.display=profile.profilePhoto?'block':'none';
  $('myCharacterOpts').innerHTML=myDayCharacters.map(c=>`<button class=\"myCharacter ${!profile.profilePhoto&&profile.myCharacter===c.id?'sel':''}\" onclick=\"chooseMyCharacter('${c.id}')\"><span>${c.emoji}</span>${c.name}</button>`).join('');
  $('themeOpts').innerHTML=Object.entries(themes).map(([name,t])=>`<button class=\"vibeCard ${profile.theme===name?'sel':''}\" onclick=\"chooseTheme('${name}')\"><span class=\"vibeSwatch theme-${name.toLowerCase()}\">${t.emoji}</span><span class=\"vibeName\">${name}<small>${t.note}</small></span></button>`).join('');
@@ -644,35 +630,6 @@ function chooseTheme(name){preserveName();profile.theme=name;localStorage.setIte
 function saveProfile(){profile.name=$('profileName').value.trim();if(!profile.profilePhoto&&!profile.myCharacter)profile.myCharacter='cat';localStorage.setItem('myday_profile',JSON.stringify(profile));refreshProfileUI();renderCharacter();toast('My Day has been personalised ✨');go('home')}
 
 
-/* My World */
-const sceneChoices={bedroom:'🛏️ Bedroom',garden:'🌷 Garden',beach:'🏖️ Beach',space:'🚀 Space',forest:'🌲 Forest'};
-const worldEffects={none:'None',sparkles:'✨ Sparkles',hearts:'💖 Hearts',leaves:'🍂 Leaves',stars:'⭐ Stars',bubbles:'🫧 Bubbles'};
-const effectIcons={sparkles:'✨',hearts:'💖',leaves:'🍂',stars:'⭐',bubbles:'🫧'};
-const buddyTypes={cat:'🐱',dog:'🐶',bunny:'🐰',bear:'🐻',dragon:'🐲',unicorn:'🦄'};
-const buddyColours=['#ffd5dd','#ffdca8','#fff0a8','#c9edc4','#bfe7ff','#d8d0ff','#efc8ef','#c9cdd8'];
-const buddyAccessories={none:'None',bow:'🎀 Bow',star:'⭐ Star',crown:'👑 Crown',flower:'🌸 Flower',glasses:'👓 Glasses'};
-const buddyPositions={left:'Left',right:'Right',top:'Top',topLeft:'Top left',topRight:'Top right'};
-function buddyById(){return world.buddies.find(b=>b.id===selectedBuddyId)}
-function addBuddy(){if(world.buddies.length>=5){toast('You can have up to five buddies in My World.');return}const b={id:crypto.randomUUID(),name:'My buddy',type:'cat',colour:'#ffd5dd',accessory:'star',position:['left','right','topLeft','topRight','top'][world.buddies.length%5]};world.buddies.push(b);selectedBuddyId=b.id;renderWorld();}
-function editBuddy(key,value){const b=buddyById();if(!b)return;b[key]=value;renderWorld(false)}
-function deleteBuddy(){const b=buddyById();if(!b)return;world.buddies=world.buddies.filter(x=>x.id!==b.id);selectedBuddyId=world.buddies[0]?.id||null;renderWorld()}
-function chooseScene(v){world.scene=v;renderWorld()}
-function chooseEffect(v){world.effect=v;renderWorld()}
-function selectBuddy(id){selectedBuddyId=id;renderWorld()}
-function saveWorld(){localStorage.setItem('myday_world',JSON.stringify(world));toast('My World saved ✨');renderWorld()}
-function buddyHTML(b){const acc=b.accessory&&b.accessory!=='none'?buddyAccessories[b.accessory].split(' ')[0]:'';return `<div class="buddy pos-${b.position}" title="${escapeHtml(b.name||'Buddy')}"><div class="buddyBubble" style="--buddy:${b.colour}">${buddyTypes[b.type]||'🐱'}</div>${acc?`<span class="buddyAcc">${acc}</span>`:''}<div class="buddyName">${escapeHtml(b.name||'Buddy')}</div></div>`}
-function renderWorld(full=true){
- $('worldStage').className=`worldStage scene-${world.scene||'bedroom'}`;$('worldMe').innerHTML=avatarHTML('large');const fx=effectIcons[world.effect]||'';$('worldEffects').innerHTML=fx?'<span>'+fx+'</span>'.repeat(5):'';$('worldBuddies').innerHTML=world.buddies.map(buddyHTML).join('');
- $('sceneOpts').innerHTML=Object.entries(sceneChoices).map(([v,l])=>`<button class="${world.scene===v?'sel':''}" onclick="chooseScene('${v}')">${l}</button>`).join('');$('effectOpts').innerHTML=Object.entries(worldEffects).map(([v,l])=>`<button class="${world.effect===v?'sel':''}" onclick="chooseEffect('${v}')">${l}</button>`).join('');
- $('buddyList').innerHTML=world.buddies.length?world.buddies.map(b=>`<button class="buddyChip ${selectedBuddyId===b.id?'sel':''}" onclick="selectBuddy('${b.id}')"><div class="ico">${buddyTypes[b.type]}</div><b>${escapeHtml(b.name||'Buddy')}</b></button>`).join(''):'<p class="muted">No buddies yet. Tap “New buddy” to make one.</p>';
- const b=buddyById();$('buddyEditor').style.display=b?'block':'none';if(!b)return;
- if(full||document.activeElement!==$('buddyName'))$('buddyName').value=b.name||'';
- $('buddyTypeOpts').innerHTML=Object.entries(buddyTypes).map(([v,ico])=>`<button class="${b.type===v?'sel':''}" onclick="editBuddy('type','${v}')">${ico} ${v[0].toUpperCase()+v.slice(1)}</button>`).join('');
- $('buddyColourOpts').innerHTML=buddyColours.map(c=>`<button class="colourChoice ${b.colour===c?'sel':''}" style="background:${c}" onclick="editBuddy('colour','${c}')"></button>`).join('');
- $('buddyAccOpts').innerHTML=Object.entries(buddyAccessories).map(([v,l])=>`<button class="${b.accessory===v?'sel':''}" onclick="editBuddy('accessory','${v}')">${l}</button>`).join('');
- $('buddyPosOpts').innerHTML=Object.entries(buddyPositions).map(([v,l])=>`<button class="${b.position===v?'sel':''}" onclick="editBuddy('position','${v}')">${l}</button>`).join('');
-}
-
 /* Parent */
 function parentGate(){const pin=prompt('Enter the parent passcode');if(pin===settings.pin)go('parent');else if(pin!==null)toast('That passcode is not correct.')}
 function loadParentSettings(){$('allowDraw').checked=settings.draw;$('allowMemory').checked=settings.memory;$('allowNotes').checked=settings.notes;$('allowMedia').checked=settings.media!==false}
@@ -685,7 +642,7 @@ async function exportBackup(){
  const es=await getEntries();
  const serial=[];
  for(const e of es){let audioData=null;if(e.audio)audioData=await blobToDataURL(e.audio);const media=[];for(const m of (e.media||[])){media.push({...m,blob:m.blob?await blobToDataURL(m.blob):null})}serial.push({...e,audio:audioData,media})}
- const blob=new Blob([JSON.stringify({app:'My Day',version:4,profile,world,settings:{...settings,pin:undefined},entries:serial},null,2)],{type:'application/json'});
+ const blob=new Blob([JSON.stringify({app:'My Day',version:5,profile,settings:{...settings,pin:undefined},entries:serial},null,2)],{type:'application/json'});
  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='my-day-backup.json';a.click();URL.revokeObjectURL(a.href);toast('Backup created.')}
 function blobToDataURL(blob){return new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(blob)})}
 
@@ -733,7 +690,7 @@ $('installBtn').addEventListener('click',async()=>{if(!deferredPrompt)return;def
 /* service worker */
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}))}
 
-refreshProfileUI();renderCharacter();renderWorld();renderMediaPreview();showOnThisDay();
+refreshProfileUI();renderCharacter();renderMediaPreview();showOnThisDay();
 </script>
 </body>
 </html>
