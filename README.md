@@ -1,5 +1,5 @@
-# My Day 2.0 — Avatar Creator 2.0 test update
+# My Day 3.0 — Character Choices
 
-This test build replaces the original avatar creator with a more detailed mix-and-match creator.
+Test release adding three character routes: Person, original My Day game-style block character, and Animal. The existing diary, recordings, drawings, media, My World, local storage and backup/restore are preserved.
 
-New: 17 hairstyles, 16 hair colours, 8 eye colours, improved outfits, separate hair accessories including heart/rainbow clips, accessory colours, improved glasses/headphones, and a fix so the typed name remains while changing avatar options. Existing diary storage and backup/restore code are retained.
+New character choices are stored inside the existing profile object for backward-compatible backups.
