@@ -1,11 +1,12 @@
-# My Day 5.0 — Diary Edition
+# My Day 5.1 — Real Diary Pages
 
-A focused return to the original idea: a private child-friendly diary for talking, drawing and remembering.
+Diary-focused release with torn-paper diary entries and a page-turning reader.
 
-## This version
-- Removes My World from My Day (saved as a separate future app idea)
-- Keeps voice diary, feelings, drawing, notes, photos/videos, On This Day and backup/restore
-- Keeps My Picture, with a scrapbook/Polaroid treatment
-- Keeps simple non-photo picture choices
-- Simplifies navigation to Home, Record, Diary, Me and Parent
-- Preserves existing diary data and profile storage
+- Diary entries look like torn-out notebook pages
+- Tap an entry to open it as a full diary page
+- Swipe left/right to turn pages
+- Previous/Next buttons remain available
+- Subtle page-turn animation with reduced-motion support
+- Photos, drawings, audio, feelings and memory treasures stay on the page
+- My World remains removed so My Day stays focused on memories
+- Existing IndexedDB diary data and profile storage are preserved
