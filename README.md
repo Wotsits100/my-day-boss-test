@@ -14,3 +14,6 @@ Diary-focused trial release for real-world testing.
 - Backup/restore remains available in Parent Area
 
 Trial it, use it, and let The Boss decide what survives the next design review.
+
+
+Icon fix v2: added brand-new teal diary icon filenames and explicit Apple touch icon reference to prevent iPad/Safari reusing the retired avatar icon.
