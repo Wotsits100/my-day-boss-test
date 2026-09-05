@@ -1,12 +1,16 @@
-# My Day 5.1 — Real Diary Pages
+# My Day — Trial Version 1.0
 
-Diary-focused release with torn-paper diary entries and a page-turning reader.
+Diary-focused trial release for real-world testing.
 
-- Diary entries look like torn-out notebook pages
+- Private diary first: voice, writing, feelings, drawings, photos and videos
+- Personal photo instead of a complicated avatar creator
+- Polaroid-style personal photos, including the centred home-page keepsake
+- Torn-out diary-page styling
 - Tap an entry to open it as a full diary page
-- Swipe left/right to turn pages
-- Previous/Next buttons remain available
+- Swipe left/right or use Previous/Next to turn diary pages
 - Subtle page-turn animation with reduced-motion support
-- Photos, drawings, audio, feelings and memory treasures stay on the page
-- My World remains removed so My Day stays focused on memories
+- My World removed so My Day stays focused on memories
 - Existing IndexedDB diary data and profile storage are preserved
+- Backup/restore remains available in Parent Area
+
+Trial it, use it, and let The Boss decide what survives the next design review.
