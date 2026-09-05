@@ -123,6 +123,32 @@
     .avFace.soft{border-radius:46% 46% 50% 50%;height:86px}.avFace.square{border-radius:38% 38% 44% 44%;width:80px;left:35px}
     .avBody.jumper:before{content:"♡";position:absolute;left:28px;top:14px;color:rgba(255,255,255,.9);font-size:20px}.avBody.skirt{left:33px;width:84px;height:64px;border-radius:24px 24px 10px 10px;clip-path:polygon(12% 0,88% 0,100% 100%,0 100%)}.avBody.skirt:after{content:"";position:absolute;left:0;right:0;top:30px;border-top:4px solid rgba(255,255,255,.55)}.avBody.pyjamas:after{content:"☾";position:absolute;left:29px;top:13px;color:rgba(255,255,255,.9);font-size:20px}
     .choiceNote{font-size:12px;color:var(--muted);margin-top:6px}
+    /* Avatar Creator 2.0 */
+    .avatarStudio{max-width:620px;margin:0 auto}
+    .avatarPreview{min-height:220px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--soft),#fff);border-radius:28px;margin:14px 0 18px;overflow:hidden}
+    .avatarTabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:14px 0}.avatarTabs button{padding:11px 6px;border-radius:14px;background:#f0f1f7;font-weight:800;font-size:13px}.avatarTabs button.sel{background:var(--soft);outline:2px solid var(--accent)}
+    .avatarPanel{display:none}.avatarPanel.active{display:block}.avatarChoices{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.avatarChoice{min-height:74px;border-radius:16px;background:#f4f5f9;padding:8px 5px;font-weight:750;font-size:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}.avatarChoice.sel{background:var(--soft);outline:2px solid var(--accent)}.avatarChoice .ico{font-size:26px;line-height:1}.avatarChoice .miniHair{width:42px;height:38px;position:relative;display:block}.avatarChoice .miniHair:before{content:"";position:absolute;left:7px;top:7px;width:28px;height:27px;border-radius:50%;background:var(--hc,#6b442f)}
+    .avEye{background:var(--eyes,#4b352d)!important;width:8px;height:10px}.avEye:after{content:"";position:absolute;width:2px;height:2px;background:white;border-radius:50%;left:2px;top:2px}
+    .avHair{background:var(--hair)!important}.avHair.short{height:42px;clip-path:polygon(0 18%,12% 5%,28% 10%,42% 0,55% 9%,72% 2%,88% 13%,100% 8%,100% 70%,88% 57%,77% 72%,63% 57%,50% 70%,35% 55%,20% 69%,0 58%)}
+    .avHair.pixie{height:45px;clip-path:polygon(0 30%,10% 8%,28% 16%,42% 0,56% 14%,73% 5%,100% 24%,94% 67%,75% 54%,62% 71%,43% 55%,26% 70%,8% 57%)}
+    .avHair.bob{height:84px;top:10px;border-radius:48% 48% 34% 34%;z-index:2}.avHair.bob:after{content:"";position:absolute;left:11px;right:11px;top:18px;height:55px;background:var(--skin);border-radius:48% 48% 40% 40%}
+    .avHair.shoulder{height:112px;top:9px;left:25px;width:100px;border-radius:48% 48% 32% 32%;z-index:2}.avHair.shoulder:after{content:"";position:absolute;left:14px;right:14px;top:20px;height:69px;background:var(--skin);border-radius:48% 48% 38% 38%}
+    .avHair.long{height:145px;top:8px;left:22px;width:106px;border-radius:48% 48% 28% 28%;z-index:1}.avHair.long:after{content:"";position:absolute;left:17px;right:17px;top:21px;height:83px;background:var(--skin);border-radius:48% 48% 42% 42%}
+    .avHair.wavy{height:145px!important;top:8px!important;left:20px!important;width:110px!important;z-index:1!important;background:radial-gradient(circle at 12% 27%,var(--hair) 0 18px,transparent 19px),radial-gradient(circle at 88% 27%,var(--hair) 0 18px,transparent 19px),radial-gradient(circle at 10% 52%,var(--hair) 0 19px,transparent 20px),radial-gradient(circle at 90% 52%,var(--hair) 0 19px,transparent 20px),radial-gradient(circle at 14% 77%,var(--hair) 0 18px,transparent 19px),radial-gradient(circle at 86% 77%,var(--hair) 0 18px,transparent 19px),linear-gradient(var(--hair),var(--hair))!important;border-radius:48% 48% 35% 35%!important}.avHair.wavy:after{content:"";position:absolute;left:19px;right:19px;top:21px;height:83px;background:var(--skin);border-radius:48% 48% 42% 42%}
+    .avHair.curls{height:96px;top:8px;left:22px;width:106px;z-index:2;background:radial-gradient(circle at 12% 18%,var(--hair) 0 15px,transparent 16px),radial-gradient(circle at 35% 10%,var(--hair) 0 18px,transparent 19px),radial-gradient(circle at 62% 10%,var(--hair) 0 18px,transparent 19px),radial-gradient(circle at 88% 18%,var(--hair) 0 15px,transparent 16px),radial-gradient(circle at 5% 48%,var(--hair) 0 17px,transparent 18px),radial-gradient(circle at 95% 48%,var(--hair) 0 17px,transparent 18px)!important}
+    .avHair.coily{height:80px;top:5px;left:20px;width:110px;z-index:4;background:radial-gradient(circle,var(--hair) 0 11px,transparent 12px) 0 0/24px 24px,radial-gradient(circle,var(--hair) 0 11px,transparent 12px) 12px 12px/24px 24px!important}
+    .avHair.ponytail,.avHair.highpony,.avHair.sidepony,.avHair.pigtails,.avHair.braids,.avHair.twobraids,.avHair.bun,.avHair.messybun,.avHair.spacebuns{height:50px;border-radius:50% 50% 35% 35%}
+    .avHair.ponytail:after,.avHair.highpony:after,.avHair.sidepony:after{content:"";position:absolute;background:var(--hair);z-index:-1;border-radius:45% 55% 55% 45%}.avHair.ponytail:after{right:-29px;top:24px;width:42px;height:78px}.avHair.highpony:after{right:-25px;top:-4px;width:40px;height:92px;transform:rotate(-12deg)}.avHair.sidepony:after{left:-27px;top:25px;width:40px;height:84px;transform:rotate(12deg)}
+    .avHair.pigtails:before,.avHair.pigtails:after{content:"";position:absolute;top:27px;width:35px;height:66px;border-radius:48%;background:var(--hair);z-index:-1}.avHair.pigtails:before{left:-29px;transform:rotate(9deg)}.avHair.pigtails:after{right:-29px;transform:rotate(-9deg)}
+    .avHair.braids:after{content:"";position:absolute;right:-18px;top:37px;width:17px;height:88px;border-radius:10px;background:repeating-linear-gradient(180deg,var(--hair) 0 12px,rgba(255,255,255,.18) 12px 14px);transform:rotate(-5deg)}
+    .avHair.twobraids:before,.avHair.twobraids:after{content:"";position:absolute;top:37px;width:17px;height:88px;border-radius:10px;background:repeating-linear-gradient(180deg,var(--hair) 0 12px,rgba(255,255,255,.18) 12px 14px)}.avHair.twobraids:before{left:-8px;transform:rotate(4deg)}.avHair.twobraids:after{right:-8px;transform:rotate(-4deg)}
+    .avHair.bun:after,.avHair.messybun:after{content:"";position:absolute;left:27px;top:-31px;width:40px;height:40px;border-radius:50%;background:var(--hair)}.avHair.messybun:after{width:45px;height:36px;left:24px;transform:rotate(8deg);box-shadow:8px -3px 0 -6px var(--hair),-8px 2px 0 -6px var(--hair)}
+    .avHair.spacebuns:before,.avHair.spacebuns:after{content:"";position:absolute;top:-24px;width:35px;height:35px;border-radius:50%;background:var(--hair)}.avHair.spacebuns:before{left:-2px}.avHair.spacebuns:after{right:-2px}
+    .avFringe{top:27px;height:18px}.avFringe.side:before{top:-8px;height:23px;left:2px;width:42px;border-radius:75% 20% 65% 25%}.avFringe.center:before,.avFringe.center:after{content:"";position:absolute;top:-8px;width:37px;height:20px;background:var(--hair)}.avFringe.center:before{left:2px;border-radius:70% 20% 70% 20%;transform:rotate(-5deg)}.avFringe.center:after{right:2px;border-radius:20% 70% 20% 70%;transform:rotate(5deg)}
+    .avBody{overflow:visible}.avBody.tee:before{content:"";position:absolute;left:-10px;top:5px;width:16px;height:28px;border-radius:10px;background:var(--shirt);box-shadow:80px 0 0 var(--shirt)}.avBody.tee:after{content:"♡"}.avBody.dress{clip-path:none;left:31px;width:88px;height:66px;border-radius:22px 22px 12px 12px}.avBody.dress:after{content:"";position:absolute;left:-9px;right:-9px;top:32px;height:40px;background:var(--shirt);clip-path:polygon(12% 0,88% 0,100% 100%,0 100%);border-radius:0 0 12px 12px}.avBody.hoodie:after{content:"";position:absolute;left:26px;top:34px;width:24px;height:12px;border-radius:3px;border:2px solid rgba(255,255,255,.5)}.avBody.jumper:before{content:"♡"}.avBody.skirt{clip-path:none;left:37px;width:76px;height:31px;border-radius:22px 22px 7px 7px}.avBody.skirt:after{content:"";position:absolute;left:-8px;top:29px;width:92px;height:36px;background:var(--shirt2,#f3a7c1);clip-path:polygon(14% 0,86% 0,100% 100%,0 100%);border-radius:0 0 10px 10px}.avBody.overalls:before{content:"";position:absolute;left:17px;top:-1px;width:7px;height:28px;border-radius:4px;background:rgba(255,255,255,.55);box-shadow:35px 0 0 rgba(255,255,255,.55)}.avBody.sport:after{content:"7";position:absolute;left:31px;top:14px;color:white;font-weight:900;font-size:20px}.avBody.shirt:after{content:"";position:absolute;left:35px;top:0;height:58px;border-left:2px solid rgba(255,255,255,.55)}.avBody.pyjamas:after{content:"☾"}
+    .hairClip{position:absolute;z-index:8;right:30px;top:30px;font-size:20px;line-height:1;filter:drop-shadow(0 1px 1px rgba(0,0,0,.15))}.hairClip.bow{font-size:23px;right:25px;top:25px}.hairClip.headband{left:36px;right:auto;top:31px;width:78px;height:10px;border-top:6px solid var(--clip,#ef6f9f);border-radius:50%;font-size:0}.hairClip.scrunchie{right:8px;top:47px;width:17px;height:17px;border:5px dotted var(--clip,#ef6f9f);border-radius:50%;font-size:0}
+    .avAccessory.glasses{transform:scale(.82);transform-origin:center}.avAccessory.headphones{left:27px;top:37px;width:96px;height:57px;border-width:6px}.avAccessory.earrings:before,.avAccessory.earrings:after{content:"●";position:absolute;top:69px;color:#f1b93a;font-size:12px}.avAccessory.earrings:before{left:28px}.avAccessory.earrings:after{left:112px}.avAccessory.sunglasses{left:45px;top:54px;width:60px;height:17px;background:linear-gradient(90deg,#34384e 0 42%,transparent 42% 58%,#34384e 58%);border-radius:6px;opacity:.9}
+    @media(max-width:430px){.avatarChoices{grid-template-columns:repeat(3,1fr)}.avatarTabs button{font-size:12px;padding:10px 3px}}
     dialog{border:0;border-radius:24px;padding:20px;max-width:400px;width:90%;box-shadow:var(--shadow)}
     dialog::backdrop{background:rgba(25,30,55,.35)}
 
@@ -262,26 +288,20 @@
 
 <section id="character" class="screen">
   <button class="smallbtn" onclick="go('home')">← Back</button>
-  <h1>Make My Day yours</h1>
-  <p class="muted">Make a character that feels like you — or invent someone completely different.</p>
-  <div id="characterPreview" class="avatarPreview"></div>
-  <div class="card"><b>What should My Day call you?</b><p class="muted">A name, nickname or initials are all fine.</p><input id="profileName" class="field" maxlength="24" placeholder="My name…"></div>
-  <div class="card">
-    <b>Character</b>
-    <p class="muted">Nothing here is linked to gender — mix and match however you like.</p>
-    <p class="muted">Character style</p><div id="genderOpts" class="seg"></div>
-    <p class="muted">Face</p><div id="faceOpts" class="seg"></div>
-    <p class="muted">Skin tone</p><div id="skinOpts" class="palette"></div>
-    <p class="muted">Hair style</p><div id="hairStyleOpts" class="seg"></div>
-    <p class="muted">Hair colour</p><div id="hairColourOpts" class="palette"></div>
-    <p class="muted">Outfit</p><div id="outfitOpts" class="seg"></div>
-    <p class="muted">Clothes colour</p><div id="shirtOpts" class="palette"></div>
-    <p class="muted">Accessory</p><div id="accessoryOpts" class="seg"></div>
+  <h1>Avatar Creator</h1>
+  <p class="muted">Mix and match anything you like. There are no “girl” or “boy” rules here.</p>
+  <div class="avatarStudio">
+    <div id="characterPreview" class="avatarPreview"></div>
+    <div class="card"><b>What should My Day call you?</b><p class="muted">Your name stays here while you try different looks.</p><input id="profileName" class="field" maxlength="24" placeholder="My name…" oninput="profile.name=this.value"></div>
+    <div class="avatarTabs"><button id="tabHair" onclick="showAvatarTab('hair')">💇 Hair</button><button id="tabFace" onclick="showAvatarTab('face')">😊 Face</button><button id="tabClothes" onclick="showAvatarTab('clothes')">👕 Clothes</button><button id="tabExtras" onclick="showAvatarTab('extras')">✨ Extras</button></div>
+    <div class="card avatarPanel" id="panelHair"><b>Hair</b><p class="muted">Choose a style, then make it any colour you like.</p><div id="hairStyleOpts" class="avatarChoices"></div><p class="muted">Hair colour</p><div id="hairColourOpts" class="palette"></div><p class="muted">Hair clip or accessory</p><div id="hairAccessoryOpts" class="avatarChoices"></div><p class="muted">Accessory colour</p><div id="clipColourOpts" class="palette"></div></div>
+    <div class="card avatarPanel" id="panelFace"><b>Face</b><p class="muted">Choose a face shape and eye colour.</p><div id="faceOpts" class="avatarChoices"></div><p class="muted">Skin tone</p><div id="skinOpts" class="palette"></div><p class="muted">Eye colour</p><div id="eyeColourOpts" class="palette"></div><p class="muted">Expression</p><div id="expressionOpts" class="avatarChoices"></div></div>
+    <div class="card avatarPanel" id="panelClothes"><b>Clothes</b><p class="muted">Real outfits, not just blocks of colour. 😂</p><div id="outfitOpts" class="avatarChoices"></div><p class="muted">Main colour</p><div id="shirtOpts" class="palette"></div><p class="muted">Second colour</p><div id="shirt2Opts" class="palette"></div></div>
+    <div class="card avatarPanel" id="panelExtras"><b>Extras</b><p class="muted">Add something extra — or keep it simple.</p><div id="accessoryOpts" class="avatarChoices"></div></div>
+    <div class="card"><b>Choose your vibe</b><p class="muted">Change the whole look of My Day.</p><div id="themeOpts" class="vibeGrid"></div></div>
+    <button class="btn primary" onclick="saveProfile()">Save my choices</button>
   </div>
-  <div class="card"><b>Choose your vibe</b><p class="muted">These now change the whole look of My Day. Tap one to preview it straight away.</p><div id="themeOpts" class="vibeGrid"></div></div>
-  <button class="btn primary" onclick="saveProfile()">Save my choices</button>
 </section>
-
 
 <section id="world" class="screen">
   <button class="smallbtn" onclick="go('home')">← Back</button>
@@ -335,7 +355,7 @@ let selectedEmojis=[], selectedWeather="", selectedStickers=[], audioBlob=null, 
 let deferredPrompt=null;
 
 const profile = JSON.parse(localStorage.getItem('myday_profile')||'{"name":"","skin":"#d99b6c","hairStyle":"curls","hairColour":"#5b3d2e","shirt":"#6f8cff","accessory":"star","theme":"Rainbow"}');
-if(!profile.skin){profile.skin="#d99b6c";profile.hairStyle="curls";profile.hairColour="#5b3d2e";profile.shirt="#6f8cff";profile.accessory="star";} profile.gender=profile.gender||'girl';profile.face=profile.face||'round';profile.outfit=profile.outfit||'tee';
+if(!profile.skin){profile.skin='#d99b6c';profile.hairStyle='curls';profile.hairColour='#5b3d2e';profile.shirt='#6f8cff';profile.accessory='none';} profile.face=profile.face||'round';profile.outfit=profile.outfit||'tee';profile.eyeColour=profile.eyeColour||'#4b352d';profile.hairAccessory=profile.hairAccessory||(profile.accessory==='star'?'star':'none');profile.clipColour=profile.clipColour||'#ef6f9f';profile.shirt2=profile.shirt2||'#f3a7c1';profile.expression=profile.expression||'smile';
 const settings = JSON.parse(localStorage.getItem('myday_settings')||'{"draw":true,"memory":true,"notes":true,"media":true,"pin":"1234"}');
 if(settings.media===undefined) settings.media=true;
 const world = JSON.parse(localStorage.getItem('myday_world')||'{"scene":"bedroom","effect":"none","buddies":[]}');
@@ -359,10 +379,14 @@ function applyTheme(){
 function avatarHTML(size='large'){
  const scale=size==='small'?.26:1;
  const acc=profile.accessory||'none';
- const a=acc==='glasses'?'<div class="avAccessory glasses"></div>':acc==='star'?'<div class="avAccessory star">⭐</div>':acc==='headphones'?'<div class="avAccessory headphones"></div>':'';
- const fringe=['long','bob','wavy','ponytail','plaits','pigtails','bun','spacebuns'].includes(profile.hairStyle)?'<div class="avFringe side"></div>':'';
- return `<div class="avatarArt" style="transform:${size==='small'?'translate(-50%,-50%) ':''}scale(${scale});transform-origin:center;--skin:${profile.skin};--hair:${profile.hairColour};--shirt:${profile.shirt}">
- <div class="avEar l"></div><div class="avEar r"></div><div class="avNeck"></div><div class="avBody ${profile.outfit||'tee'}"></div><div class="avHead avFace ${profile.face||'round'}"></div><div class="avHair ${profile.hairStyle}"></div>${fringe}<div class="avEye l"></div><div class="avEye r"></div><div class="avBlush l"></div><div class="avBlush r"></div><div class="avSmile"></div>${a}</div>`;
+ const extras=acc==='glasses'?'<div class="avAccessory glasses"></div>':acc==='headphones'?'<div class="avAccessory headphones"></div>':acc==='sunglasses'?'<div class="avAccessory sunglasses"></div>':acc==='earrings'?'<div class="avAccessory earrings"></div>':'';
+ const clip=profile.hairAccessory||'none';
+ const clipIcons={star:'⭐',heart:'❤️',rainbow:'🌈',flower:'🌸',bow:'🎀',butterfly:'🦋',sparkle:'✨'};
+ const clipHTML=clip==='none'?'':clip==='headband'?`<div class="hairClip headband" style="--clip:${profile.clipColour}"></div>`:clip==='scrunchie'?`<div class="hairClip scrunchie" style="--clip:${profile.clipColour}"></div>`:`<div class="hairClip ${clip}">${clipIcons[clip]||''}</div>`;
+ const fringe=['bob','shoulder','long','wavy','ponytail','highpony','sidepony','pigtails','braids','twobraids','bun','messybun','spacebuns'].includes(profile.hairStyle)?'<div class="avFringe side"></div>':'';
+ let mouth='<div class="avSmile"></div>'; if(profile.expression==='happy') mouth='<div class="avSmile" style="height:13px;border-bottom-width:4px"></div>'; if(profile.expression==='calm') mouth='<div style="position:absolute;left:67px;top:82px;width:16px;border-top:3px solid #7d4a47;border-radius:50%;z-index:5"></div>';
+ return `<div class="avatarArt" style="transform:${size==='small'?'translate(-50%,-50%) ':''}scale(${scale});transform-origin:center;--skin:${profile.skin};--hair:${profile.hairColour};--eyes:${profile.eyeColour};--shirt:${profile.shirt};--shirt2:${profile.shirt2}">
+ <div class="avEar l"></div><div class="avEar r"></div><div class="avNeck"></div><div class="avBody ${profile.outfit||'tee'}"></div><div class="avHead avFace ${profile.face||'round'}"></div><div class="avHair ${profile.hairStyle}"></div>${fringe}<div class="avEye l"></div><div class="avEye r"></div><div class="avBlush l"></div><div class="avBlush r"></div>${mouth}${clipHTML}${extras}</div>`;
 }
 function refreshProfileUI(){
  applyTheme();
@@ -492,28 +516,37 @@ function attachDrawing(){if(!settings.draw){toast('Drawings are turned off in Pa
 async function saveDrawingOnly(){if(!settings.draw){toast('Drawings are turned off in Parent Area.');return}drawingData=canvas.toDataURL('image/png');audioBlob=null;selectedEmojis=[];$('note').value='';await saveCurrentEntry()}
 renderDrawPalette();
 
-/* Character */
+/* Character Creator 2.0 */
 const characterChoices={
- skin:['#f6d7c3','#e8b894','#d99b6c','#b97952','#8b5a3c','#5f3b2a'],
- hairColour:['#2e241f','#5b3d2e','#8c5d3d','#c07b4f','#d8b15a','#8b6a9e'],
- shirt:['#6f8cff','#4ab49d','#e88757','#dc7096','#8d78c7','#4e6078'],
- gender:['girl','boy','mix'],
+ skin:['#f8ddcc','#f0c8aa','#e2aa7f','#c9875f','#9a6244','#6b4430','#442d25'],
+ eyeColour:['#2b211d','#4b352d','#7a4f2c','#8a6a35','#64713d','#3f6f8f','#6e7785','#b06f2f'],
+ hairColour:['#171515','#2d211d','#4b3025','#6b442f','#8a5a3b','#a86c42','#7a352c','#b94f32','#d98942','#c99a55','#e2bb70','#f1d59a','#e77ba7','#8b63b8','#557fd0','#45a9a1'],
+ shirt:['#5f79e8','#4ab49d','#e88757','#dc7096','#8d78c7','#4e6078','#e8b83e','#d95f5f','#f19cc2','#65a8d8'],
+ shirt2:['#f3a7c1','#8ed8cc','#ffd276','#aebaf6','#d5b0e8','#ffffff','#40506e','#ef8b69'],
+ clipColour:['#ef6f9f','#8b78d1','#5c8fe8','#4ab49d','#f1b93a','#e86d5a','#ffffff','#39405d'],
  face:['round','oval','heart','soft','square'],
- hairStyle:['short','bob','curls','wavy','long','ponytail','pigtails','plaits','bun','spacebuns','cap'],
- outfit:['tee','dress','hoodie','jumper','skirt','overalls','pyjamas'],
- accessory:['none','glasses','star','headphones']
+ expression:['smile','happy','calm'],
+ hairStyle:['short','pixie','bob','shoulder','long','wavy','curls','coily','ponytail','highpony','sidepony','pigtails','braids','twobraids','bun','messybun','spacebuns'],
+ outfit:['tee','dress','hoodie','jumper','skirt','overalls','sport','shirt','pyjamas'],
+ hairAccessory:['none','star','heart','rainbow','flower','bow','butterfly','sparkle','headband','scrunchie'],
+ accessory:['none','glasses','sunglasses','headphones','earrings']
 };
-const labels={girl:'Girl',boy:'Boy',mix:'Mix & match',round:'Round',oval:'Oval',heart:'Heart',soft:'Soft',square:'Square',short:'Short',bob:'Bob',curls:'Curls',wavy:'Wavy',long:'Long',ponytail:'Ponytail',pigtails:'Pigtails',plaits:'Plaits',bun:'Bun',spacebuns:'Space buns',cap:'Cap',tee:'T-shirt',dress:'Dress',hoodie:'Hoodie',jumper:'Jumper',skirt:'Top & skirt',overalls:'Dungarees',pyjamas:'Pyjamas',none:'None',glasses:'Glasses',star:'Star',headphones:'Headphones'};
-function colourOptions(id,key){$(id).innerHTML=characterChoices[key].map(c=>`<button class="colourChoice ${profile[key]===c?'sel':''}" style="background:${c}" onclick="profile.${key}='${c}';renderCharacter()"></button>`).join('')}
-function textOptions(id,key){$(id).innerHTML=characterChoices[key].map(v=>`<button class="${profile[key]===v?'sel':''}" onclick="chooseCharacterOption('${key}','${v}')">${labels[v]}</button>`).join('')}
-function chooseCharacterOption(key,v){profile[key]=v;if(key==='gender'&&v==='girl'&&profile.hairStyle==='cap')profile.hairStyle='wavy';if(key==='gender'&&v==='boy'&&profile.hairStyle==='spacebuns')profile.hairStyle='short';renderCharacter()}
+const labels={round:'Round',oval:'Oval',heart:'Heart',soft:'Soft',square:'Square',smile:'Smile',happy:'Big smile',calm:'Calm',short:'Short',pixie:'Pixie',bob:'Bob',shoulder:'Shoulder length',long:'Long straight',wavy:'Long wavy',curls:'Curly',coily:'Coily',ponytail:'Ponytail',highpony:'High ponytail',sidepony:'Side ponytail',pigtails:'Pigtails',braids:'Side braid',twobraids:'Two braids',bun:'Neat bun',messybun:'Messy bun',spacebuns:'Space buns',tee:'T-shirt',dress:'Dress',hoodie:'Hoodie',jumper:'Jumper',skirt:'Top & skirt',overalls:'Dungarees',sport:'Sports top',shirt:'Shirt',pyjamas:'Pyjamas',none:'None',glasses:'Glasses',sunglasses:'Sunglasses',headphones:'Headphones',earrings:'Earrings',star:'Star clip',rainbow:'Rainbow clip',flower:'Flower clip',bow:'Bow',butterfly:'Butterfly clip',sparkle:'Sparkle clip',headband:'Headband',scrunchie:'Scrunchie'};
+let avatarTab='hair';
+function preserveName(){const el=$('profileName');if(el)profile.name=el.value}
+function chooseCharacterOption(key,v){preserveName();profile[key]=v;renderCharacter()}
+function colourOptions(id,key){$(id).innerHTML=characterChoices[key].map(c=>`<button aria-label="Choose colour" class="colourChoice ${profile[key]===c?'sel':''}" style="background:${c}" onclick="preserveName();profile.${key}='${c}';renderCharacter()"></button>`).join('')}
+function choiceIcon(key,v){if(key==='hairStyle')return '<span class="ico">💇</span>';if(key==='face')return '<span class="ico">🙂</span>';if(key==='expression')return `<span class="ico">${v==='happy'?'😄':v==='calm'?'😌':'🙂'}</span>`;if(key==='outfit')return `<span class="ico">${v==='dress'?'👗':v==='hoodie'?'🧥':v==='overalls'?'🩱':v==='sport'?'🏃':v==='pyjamas'?'🌙':'👕'}</span>`;if(key==='hairAccessory'){const x={none:'○',star:'⭐',heart:'❤️',rainbow:'🌈',flower:'🌸',bow:'🎀',butterfly:'🦋',sparkle:'✨',headband:'〰️',scrunchie:'⭕'};return `<span class="ico">${x[v]}</span>`}const x={none:'○',glasses:'👓',sunglasses:'🕶️',headphones:'🎧',earrings:'✨'};return `<span class="ico">${x[v]||'•'}</span>`}
+function visualOptions(id,key){$(id).innerHTML=characterChoices[key].map(v=>`<button class="avatarChoice ${profile[key]===v?'sel':''}" onclick="chooseCharacterOption('${key}','${v}')">${choiceIcon(key,v)}<span>${labels[v]}</span></button>`).join('')}
+function showAvatarTab(tab){preserveName();avatarTab=tab;['hair','face','clothes','extras'].forEach(x=>{$('panel'+x[0].toUpperCase()+x.slice(1)).classList.toggle('active',x===tab);$('tab'+x[0].toUpperCase()+x.slice(1)).classList.toggle('sel',x===tab)})}
 function renderCharacter(){
- colourOptions('skinOpts','skin');colourOptions('hairColourOpts','hairColour');colourOptions('shirtOpts','shirt');
- textOptions('genderOpts','gender');textOptions('faceOpts','face');textOptions('hairStyleOpts','hairStyle');textOptions('outfitOpts','outfit');textOptions('accessoryOpts','accessory');
+ const typed=$('profileName')?.value; if(typed!==undefined) profile.name=typed;
+ colourOptions('skinOpts','skin');colourOptions('eyeColourOpts','eyeColour');colourOptions('hairColourOpts','hairColour');colourOptions('shirtOpts','shirt');colourOptions('shirt2Opts','shirt2');colourOptions('clipColourOpts','clipColour');
+ visualOptions('faceOpts','face');visualOptions('expressionOpts','expression');visualOptions('hairStyleOpts','hairStyle');visualOptions('outfitOpts','outfit');visualOptions('hairAccessoryOpts','hairAccessory');visualOptions('accessoryOpts','accessory');
  $('themeOpts').innerHTML=Object.entries(themes).map(([name,t])=>`<button class="vibeCard ${profile.theme===name?'sel':''}" onclick="chooseTheme('${name}')"><span class="vibeSwatch theme-${name.toLowerCase()}">${t.emoji}</span><span class="vibeName">${name}<small>${t.note}</small></span></button>`).join('');
- $('characterPreview').innerHTML=avatarHTML('large');$('profileName').value=profile.name||'';
+ $('characterPreview').innerHTML=avatarHTML('large');$('profileName').value=profile.name||'';showAvatarTab(avatarTab);
 }
-function chooseTheme(name){profile.theme=name;localStorage.setItem('myday_profile',JSON.stringify(profile));applyTheme();renderCharacter();}
+function chooseTheme(name){preserveName();profile.theme=name;localStorage.setItem('myday_profile',JSON.stringify(profile));applyTheme();renderCharacter()}
 function saveProfile(){profile.name=$('profileName').value.trim();localStorage.setItem('myday_profile',JSON.stringify(profile));refreshProfileUI();renderCharacter();toast('My Day has been personalised ✨');go('home')}
 
 

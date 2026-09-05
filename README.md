@@ -1,5 +1,5 @@
-# My Day 2.0 — Boss Edition
+# My Day 2.0 — Avatar Creator 2.0 test update
 
-Combined release containing the drawing, avatar, My World, diary media and vibe updates, plus creative extras: weather, stickers, memory treasures and My World scene effects.
+This test build replaces the original avatar creator with a more detailed mix-and-match creator.
 
-Diary data remains local in IndexedDB. Backup/restore remains compatible with earlier My Day backups; newer fields are optional.
+New: 17 hairstyles, 16 hair colours, 8 eye colours, improved outfits, separate hair accessories including heart/rainbow clips, accessory colours, improved glasses/headphones, and a fix so the typed name remains while changing avatar options. Existing diary storage and backup/restore code are retained.
