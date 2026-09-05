@@ -1,5 +1,5 @@
-# My Day 3.0 — Character Choices
+# My Day 4.0 — My Picture Edition
 
-Test release adding three character routes: Person, original My Day game-style block character, and Animal. The existing diary, recordings, drawings, media, My World, local storage and backup/restore are preserved.
+A simpler My Day test release. The avatar creator has retired after heroic service. Children can now use a photo that is resized and stored locally in the app, or choose a simple My Day character.
 
-New character choices are stored inside the existing profile object for backward-compatible backups.
+All diary, recording, drawing, My World, media and backup features are retained.
